@@ -1,113 +1,174 @@
-import Image from 'next/image'
+import Contact from "./components/Contact";
+import Image from "next/image";
+const cargarImagen = require.context("./img", true);
+
+const fondo0 = "https://corsialminuto.it/img/logo.svg";
+const fondo1 = "https://corsialminuto.it/img/full-img/img.png";
+const fondo2 =
+  "https://c0.wallpaperflare.com/preview/847/634/542/black-business-camera-designer.jpg";
+const fondo3 = "https://corsialminuto.it/img/partners/iqnet-b.webp";
+const fondo4 = "https://corsialminuto.it/img/partners/efqm500-b.webp";
+const fondo5 = "https://corsialminuto.it/img/icon4.svg";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <main className="text-base">
+      <section className="w-full flex justify-center">
+        <div className="w-full sm:w-[540px] md:w-[720px] lg:w-[960px] xl:w-[1200px] p-4 py-6 flex flex-row justify-between items-center">
+          <a href="https://www.google.com" target="_blank">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src={cargarImagen(`./logo_corsi.svg`)}
+              style={{ width: "120px" }}
             />
           </a>
+          <select className="text-white text-lg p-2 rounded-md bg-[#ff5709b6] border-2 border-orange-500 hover:bg-gray-50 hover:text-black ">
+            <option value="">Altri Corsi</option>
+            <option value="">Option 2</option>
+            <option value="">Alternativa</option>
+          </select>
         </div>
-      </div>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section
+        id="?"
+        className="lg:h-[calc(85vh)] bg-[#1A2035]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${fondo2})`,
+          backgroundPosition: "50%",
+          backgroundSize: "cover",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        <div className="w-full flex flex-col md:flex-row ">
+          <div className="w-full p-5 flex">
+            <div className="m-auto p-5 text-white text-3xl text-center md:text-left">
+              <h1 className="mb-3">Corso</h1>
+              <h1 className="mb-3">
+                <span className="px-4 pt-2 lg:text-4xl bg-cyan-700">
+                  Full Stack
+                </span>
+              </h1>
+              <h1 className="mb-3">
+                <span className="px-4 pt-2 lg:text-4xl bg-cyan-700">
+                  Web Developer
+                </span>
+              </h1>
+              <h1 className="text-base">
+                Richiedi informazioni gratis e senza impegno!
+              </h1>
+            </div>
+          </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+          <div className="w-full flex justify-center lg:mt-5">
+            <Contact />
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full md:h-24 flex justify-center items-center bg-black text-white">
+        <div className="w-full lg:w-[960px]">
+          <div className="w-[150px] md:w-[600px] flex flex-col md:flex-row md:justify-evenly ">
+            <h1 className="my-3">Ore: 800+</h1>
+            <h1 className="my-3">100% online</h1>
+            <h1 className="my-3">Masterclass con esperti</h1>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full flex justify-center bg-gray-50 mb-6">
+        <div className="w-full sm:w-[540px] lg:w-[720px] xl:w-[760px] p-8 flex flex-col items-center text-sm">
+          <p className="mb-3">
+            Impara a creare applicazioni e siti web con il corso di Full Stack
+            Web Developer di MasterD e diventa un programmatore web esperto. La
+            figura professionale dello sviluppatore Full Stack è un punto di
+            riferimento per tutto il team che lavora su un progetto; infatti,
+            deve necessariamente possedere la conoscenza di tutta una serie di
+            linguaggi di programmazione, come, ad esempio, Java, Python, PHP e
+            HTML, CSS e JavaScript.
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
+          <p className="mb-6">
+            Il Full Stack Developer si occupa dello sviluppo e della
+            programmazione di applica zioni e siti web a partire dalla
+            progettazione back-end (data processing e storage) fino allo
+            sviluppo dell’interfaccia front-end. È{" "}
+            <strong> una figura completa con competenze trasversali</strong>{" "}
+            anche nel campo del web design e del database management.
           </p>
-        </a>
+          <select
+            name=""
+            id=""
+            className="w-full bg-gray-50 border-b border-gray-500 p-4"
+          >
+            <option value="">Casa appenderai durante il corso</option>
+            <option value="">hola</option>
+          </select>
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+      <section className="w-full flex justify-center py-10">
+        <div className="w-full sm:w-[540px] lg:w-[800px] xl:w-[960px] p-12 rounded-xl lg:rounded-3xl bg-gray-100 flex flex-col lg:flex-row">
+          <div className="basis-1/2">
+            <div className="text-3xl lg:text-xl mb-4 text-center lg:text-left">
+              Sbocchi professionali per un programmatore Full Stack
+            </div>
+            <div className="w-2/3 bg-cyan-500 h-1 mb-2"> {""}</div>
+            <p className="mb-8">
+              Il Full Stack Web Developer è uno dei profili più ricercati
+              nell’industria della programma- zione. Questo corso ti permetterà
+              di inserirti nel mondo del lavoro con il ruolo di:
+            </p>
+            <ul className="text-sm list-disc list-inside grid gap-4 mb-8">
+              <li>Front-End Developer</li>
+              <li>Back-End Developer</li>
+              <li>Java Full Stack Developer</li>
+              <li>Web Developer</li>
+              <li>Test Automation Engineer</li>
+              <li>DevOps Specialist</li>
+              <li>Java Developer</li>
+              <li>Cybersecurity Specialist</li>
+            </ul>
+          </div>
+          <div className="mb-6 basis-1/2 flex items-center">
+            <img src={fondo1} alt="" />
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <section className="w-full flex justify-center bg-white p-12 ">
+        <div className="w-full sm:w-[320px]">
+          <div className="text-4xl mb-4 text-center">I plus del corso</div>
+          <div className="w-2/3 bg-cyan-500 h-1 mb-6"> {""}</div>
+          <div className="bg-cyan-500 flex flex-col items-center rounded-lg py-8">
+            <img src={fondo5} width={"100px"} alt="" />
+            <h1 className="mt-4 text-3xl text-center text-white">
+              Lezioni live streaming
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full flex justify-center bg-gray-100 py-12">
+        <div className="w-full sm:w-[540px] md:w-[720px] lg:w-[960px] px-12 flex flex-col md:flex-row items-center md:justify-between">
+          <h1 className="md:basis-2/3 text-2xl lg:text-3xl text-center md:text-left mb-6 md:mb-0">
+            Scopri tutti i dettagli e i vantaggi di questo corso
+          </h1>
+          <div className="flex items-center">
+            <button className=" text-white text-xl lg:text-2xl py-2 px-8 rounded-md bg-orange-500 border border-orange-300">
+              Chiedi info!
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-900 text-white p-12 flex flex-col items-center">
+        <h1 className="text-2xl py-2  mb-6 border-b-2 border-gray-50">
+          Certificazioni
+        </h1>
+        <div className="grid grid-cols-2 gap-4">
+          <img src={fondo3} alt="" style={{ width: "64px" }} />
+          <img src={fondo4} alt="" style={{ width: "50px" }} />
+        </div>
+      </section>
     </main>
-  )
+  );
 }
