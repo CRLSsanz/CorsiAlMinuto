@@ -1,7 +1,7 @@
 import React from "react";
 const Contact = () => {
   return (
-    <div className="w-full sm:w-[360px] bg-white text-gray-800 p-8 m-5">
+    <div className="w-full sm:w-[360px] bg-white text-gray-800 p-8 m-5 md:mt-10">
       <h1 className="text-2xl text-center mb-3">
         Scopri subito <br /> come iniziare
       </h1>

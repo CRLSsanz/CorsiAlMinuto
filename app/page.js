@@ -1,6 +1,13 @@
 import Contact from "./components/Contact";
 import Image from "next/image";
+import logo from "@/app/img/logo_corsi.svg";
+/*
 const cargarImagen = require.context("./img", true);
+<Image
+ src={cargarImagen(`./logo_corsi.svg`)}
+ style={{ width: "120px" }}
+/> 
+*/
 
 const fondo0 = "https://corsialminuto.it/img/logo.svg";
 const fondo1 = "https://corsialminuto.it/img/full-img/img.png";
@@ -17,8 +24,11 @@ export default function Home() {
         <div className="w-full sm:w-[540px] md:w-[720px] lg:w-[960px] xl:w-[1200px] p-4 py-6 flex flex-row justify-between items-center">
           <a href="https://www.google.com" target="_blank">
             <Image
-              src={cargarImagen(`./logo_corsi.svg`)}
-              style={{ width: "120px" }}
+              src={logo}
+              alt="Vercel Logo"
+              width={120}
+              height={120}
+              priority
             />
           </a>
           <select className="text-white text-lg p-2 rounded-md bg-[#ff5709b6] border-2 border-orange-500 hover:bg-gray-50 hover:text-black ">
@@ -31,7 +41,7 @@ export default function Home() {
 
       <section
         id="?"
-        className="lg:h-[calc(85vh)] bg-[#1A2035]"
+        className="w-full flex justify-center lgGG:h-[calc(85vh)] bg-[#1A2035]"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${fondo2})`,
           backgroundPosition: "50%",
@@ -39,17 +49,17 @@ export default function Home() {
           backgroundAttachment: "fixed",
         }}
       >
-        <div className="w-full flex flex-col md:flex-row ">
-          <div className="w-full p-5 flex">
-            <div className="m-auto p-5 text-white text-3xl text-center md:text-left">
-              <h1 className="mb-3">Corso</h1>
-              <h1 className="mb-3">
-                <span className="px-4 pt-2 lg:text-4xl bg-cyan-700">
+        <div className="w-full md:w-[720px] lg:w-[960px] xl:w-[1200px] flex flex-col md:flex-row  md:justify-between ">
+          <div className="w-full py-10 flex justify-center items-center">
+            <div className="p-5 text-white text-3xl text-center md:text-left">
+              <h1 className="mb-2">Corso</h1>
+              <h1 className="mb-6">
+                <span className="px-4 py-2 lg:text-4xl bg-gradient-to-b from-blue-600  to-blue-800">
                   Full Stack
                 </span>
               </h1>
-              <h1 className="mb-3">
-                <span className="px-4 pt-2 lg:text-4xl bg-cyan-700">
+              <h1 className="mb-8">
+                <span className="px-4 py-2 lg:text-4xl bg-gradient-to-b from-blue-600 via-blue-700 to-blue-800">
                   Web Developer
                 </span>
               </h1>
@@ -59,15 +69,15 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-full flex justify-center lg:mt-5">
+          <div className="w-full flex justify-center items-center md:justify-end lg:-mb-10">
             <Contact />
           </div>
         </div>
       </section>
 
-      <section className="w-full md:h-24 flex justify-center items-center bg-black text-white">
-        <div className="w-full lg:w-[960px]">
-          <div className="w-[150px] md:w-[600px] flex flex-col md:flex-row md:justify-evenly ">
+      <section className="w-full flex justify-center items-center bg-black text-white">
+        <div className="w-full lg:w-[960px] xl:w-[1200px] flex justify-center lg:justify-start ">
+          <div className="w-[150px] md:w-[600px] py-5 md:py-0 flex flex-col md:flex-row md:justify-evenly ">
             <h1 className="my-3">Ore: 800+</h1>
             <h1 className="my-3">100% online</h1>
             <h1 className="my-3">Masterclass con esperti</h1>
@@ -75,8 +85,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full flex justify-center bg-gray-50 mb-6">
-        <div className="w-full sm:w-[540px] lg:w-[720px] xl:w-[760px] p-8 flex flex-col items-center text-sm">
+      <section className="w-full flex justify-center bg-white mt-3">
+        <div className="w-full sm:w-[540px] lg:w-[720px] xl:w-[760px] p-8 flex flex-col items-center text-sm lg:text-base">
           <p className="mb-3">
             Impara a creare applicazioni e siti web con il corso di Full Stack
             Web Developer di MasterD e diventa un programmatore web esperto. La
@@ -94,11 +104,7 @@ export default function Home() {
             <strong> una figura completa con competenze trasversali</strong>{" "}
             anche nel campo del web design e del database management.
           </p>
-          <select
-            name=""
-            id=""
-            className="w-full bg-gray-50 border-b border-gray-500 p-4"
-          >
+          <select name="" id="" className="w-full border-b border-gray-500 p-4">
             <option value="">Casa appenderai durante il corso</option>
             <option value="">hola</option>
           </select>
@@ -136,8 +142,12 @@ export default function Home() {
 
       <section className="w-full flex justify-center bg-white p-12 ">
         <div className="w-full sm:w-[320px]">
-          <div className="text-4xl mb-4 text-center">I plus del corso</div>
-          <div className="w-2/3 bg-cyan-500 h-1 mb-6"> {""}</div>
+          <div className="text-4xl mb-4 text-center">
+            I plus del <br /> corso
+          </div>
+          <div className="w-full flex justify-center ">
+            <div className="w-2/3 bg-cyan-500 h-1 mb-10"> {""}</div>
+          </div>
           <div className="bg-cyan-500 flex flex-col items-center rounded-lg py-8">
             <img src={fondo5} width={"100px"} alt="" />
             <h1 className="mt-4 text-3xl text-center text-white">
